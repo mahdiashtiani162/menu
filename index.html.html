@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>کافه فست فود لوین</title>
+
+<link href="https://cdn.jsdelivr.net/gh/rastikerdar/shabnam-font@v5.0.1/dist/font-face.css" rel="stylesheet">
+
+<style>
+    body {
+        margin: 0;
+        font-family: 'Shabnam', sans-serif;
+        background: url('https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=1470&q=80') center/cover fixed;
+        color: #fff;
+        min-height: 100vh;
+    }
+    .container {
+        width: 95%;
+        max-width: 900px;
+        margin: 20px auto;
+        background: rgba(0,0,0,0.78);
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+    }
+    .header {
+        text-align: center;
+        padding: 25px 15px 15px;
+        background: linear-gradient(135deg, #1a1a1a, #000);
+    }
+    h1 {
+        margin: 0;
+        font-size: 34px;
+        color: #ffcc00;
+        text-shadow: 0 0 15px rgba(255,204,0,0.6);
+    }
+
+    /* تب‌ها */
+    .tabs {
+        display: flex;
+        background: #111;
+    }
+    .tab-btn {
+        flex: 1;
+        padding: 16px;
+        text-align: center;
+        font-size: 20px;
+        font-weight: bold;
+        background: #222;
+        color: #ccc;
+        border: none;
+        cursor: pointer;
+        transition: all 0.4s;
+    }
+    .tab-btn.active {
+        background: #ffcc00;
+        color: #000;
+    }
+    .tab-btn:hover:not(.active) {
+        background: #444;
+    }
+
+    /* محتوا */
+    .tab-content {
+        display: none;
+        padding: 20px;
+        animation: fadeIn 0.5s;
+    }
+    .tab-content.active {
+        display: block;
+    }
+    @keyframes fadeIn {
+        from {opacity: 0; transform: translateY(10px);}
+        to {opacity: 1; transform: translateY(0);}
+    }
+
+    details {
+        background: rgba(30,30,30,0.9);
+        margin-bottom: 14px;
+        border-radius: 14px;
+        overflow: hidden;
+        border: 1px solid #444;
+    }
+    summary {
+        padding: 16px 20px;
+        font-size: 21px;
+        background: #1a1a1a;
+        color: #ffcc00;
+        cursor: pointer;
+        font-weight: bold;
+    }
+    summary::marker { color: #ffcc00; }
+    ul {
+        list-style: none;
+        padding: 10px 20px 20px;
+        margin: 0;
+    }
+    li {
+        display: flex;
+        justify-content: space-between;
+        padding: 14px 0;
+        border-bottom: 1px dashed #555;
+        font-size: 17px;
+    }
+    li:last-child { border: none; }
+    .desc {
+        font-size: 13.5px;
+        color: #ddd;
+        margin-top: 6px;
+        line-height: 1.5;
+    }
+    .price {
+        color: #ffcc00;
+        font-weight: bold;
+        white-space: nowrap;
+        margin-left: 15px;
+    }
+
+    @media (max-width: 480px) {
+        h1 { font-size: 28px; }
+        .tab-btn { font-size: 17px; padding: 14px; }
+        summary { font-size: 19px; }
+        li { font-size: 15.5px; }
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <h1>کافه فست فود لوین</h1>
+    </div>
+
+    <!-- تب‌ها -->
+    <div class="tabs">
+        <button class="tab-btn active" onclick="openTab(event, 'fastfood')">فست فود</button>
+        <button class="tab-btn" onclick="openTab(event, 'cafe')">کافه</button>
+    </div>
+
+    <!-- منوی فست فود -->
+    <div id="fastfood" class="tab-content active">
+        <!-- همبرگرها، پیتزا، سوخاری و … -->
+        <details open><summary>همبرگرها</summary><ul>
+            <li><div><span>برگر کلاسیک</span><small class="desc">گوشت ۹۷٪، کاهو، گوجه، خیارشور، سس مخصوص، پنیر گودا</small></div><span class="price">۲۶۸٬۰۰۰ تومان</span></li>
+            <li><div><span>برگر مخصوص</span><small class="desc">گوشت ۱۵۰ گرمی ۹۷٪، کاهو، گوجه، خیارشور، سس مخصوص</small></div><span class="price">۲۷۸٬۰۰۰ تومان</span></li>
+            <li><div><span>دوبل برگر</span><small class="desc">دو لایه گوشت دست‌ساز ۹۷٪</small></div><span class="price">۳۹۸٬۰۰۰ تومان</span></li>
+            <li><div><span>چیزبرگر</span><small class="desc">گوشت ۹۷٪، پنیر پیتزا فراوان</small></div><span class="price">۳۱۸٬۰۰۰ تومان</span></li>
+            <li><div><span>ماشروم برگر</span><small class="desc">قارچ تفت‌داده‌شده، پنیر پیتزا</small></div><span class="price">۲۹۵٬۰۰۰ تومان</span></li>
+            <li><div><span>چیکن استیک</span><small class="desc">استیک مرغ گریل، سبزیجات</small></div><span class="price">۲۱۸٬۰۰۰ تومان</span></li>
+        </ul></details>
+
+        <details open><summary>پیتزاها</summary><ul>
+            <li><div><span>پیتزا مخلوط ۱ نفره</span></div><span class="price">۲۹۵٬۰۰۰ تومان</span></li>
+            <li><div><span>پیتزا مخلوط ۲ نفره</span></div><span class="price">۳۸۹٬۰۰۰ تومان</span></li>
+            <li><div><span>پیتزا مخصوص ۲ نفره</span><small class="desc">تاپینگ کامل + پنیر اضافه</small></div><span class="price">۴۳۹٬۰۰۰ تومان</span></li>
+            <li><div><span>پیتزا پپرونی</span></div><span class="price">۳۳۷٬۰۰۰ تومان</span></li>
+        </ul></details>
+
+        <details><summary>سوخاری‌ها</summary><ul>
+            <li><div><span>فیله استریپس ۳ تکه</span><small class="desc">+ سیب‌زمینی و سس</small></div><span class="price">۲۵۸٬۰۰۰ تومان</span></li>
+            <li><div><span>فیله استریپس ۵ تکه</span></div><span class="price">۳۷۰٬۰۰۰ تومان</span></li>
+            <li><div><span>فیله استریپس ۸ تکه</span></div><span class="price">۵۷۸٬۰۰۰ تومان</span></li>
+        </ul></details>
+
+        <details><summary>سالاد و پیش‌غذا</summary><ul>
+            <li><div><span>سالاد سزار با مرغ سوخاری</span></div><span class="price">۲۹۵٬۰۰۰ تومان</span></li>
+            <li><div><span>فرنچ فرایز</span></div><span class="price">۱۰۵٬۰۰۰ تومان</span></li>
+            <li><div><span>اسپشیال فرایز دو نفره</span></div><span class="price">۲۱۸٬۰۰۰ تومان</span></li>
+        </ul></details>
+    </div>
+
+    <!-- منوی کافه -->
+    <div id="cafe" class="tab-content">
+        <details open><summary>قهوه‌های گرم</summary><ul>
+            <li><div><span>آمریکانو</span></div><span class="price">۷۵٬۰۰۰ تومان</span></li>
+            <li><div><span>اسپرسو تک‌شات</span></div><span class="price">۶۵۵٬۰۰۰ تومان</span></li>
+            <li><div><span>اسپرسو دابل</span></div><span class="price">۸۵٬۰۰۰ تومان</span></li>
+            <li><div><span>کاپوچینو</span></div><span class="price">۹۵٬۰۰۰ تومان</span></li>
+            <li><div><span>لاته</span></div><span class="price">۹۸٬۰۰۰ تومان</span></li>
+            <li><div><span>کارامل ماکیاتو</span></div><span class="price">۱۱۵٬۰۰۰ تومان</span></li>
+            <li><div><span>موکا</span></div><span class="price">۱۱۰٬۰۰۰ تومان</span></li>
+        </ul></details>
+
+        <details open><summary>قهوه سرد و فراپه</summary><ul>
+            <li><div><span>آیس آمریکانو</span></div><span class="price">۸۵٬۰۰۰ تومان</span></li>
+            <li><div><span>آیس لاته</span></div><span class="price">۱۰۵٬۰۰۰ تومان</span></li>
+            <li><div><span>فراپه کارامل</span></div><span class="price">۱۳۵٬۰۰۰ تومان</span></li>
+            <li><div><span>فراپه موکا</span></div><span class="price">۱۳۵٬۰۰۰ تومان</span></li>
+            <li><div><span>آیس اسپانیارد</span></div><span class="price">۱۲۰٬۰۰۰ تومان</span></li>
+        </ul></details>
+
+        <details><summary>چای و دمنوش</summary><ul>
+            <li><div><span>چای ماسالا</span></div><span class="price">۸۵٬۰۰۰ تومان</span></li>
+            <li><div><span>چای سبز</span></div><span class="price">۶۵٬۰۰۰ تومان</span></li>
+            <li><div><span>دمنوش نعنا و لیمو</span></div><span class="price">۷۵٬۰۰۰ تومان</span></li>
+        </ul></details>
+
+        <details><summary>شیک و اسموتی</summary><ul>
+            <li><div><span>شیک وانیل</span></div><span class="price">۱۲۰٬۰۰۰ تومان</span></li>
+            <li><div><span>شیک شکلات</span></div><span class="price">۱۲۵٬۰۰۰ تومان</span></li>
+            <li><div><span>شیک توت‌فرنگی</span></div><span class="price">۱۳۰٬۰۰۰ تومان</span></li>
+            <li><div><span>اسموتی انبه</span></div><span class="price">۱۴۰٬۰۰۰ تومان</span></li>
+        </ul></details>
+
+        <details><summary>کیک و دسر</summary><ul>
+            <li><div><div><span>تیرامیسو</span></div><span class="price">۱۱۵٬۰۰۰ تومان</span></li>
+            <li><div><span>چیزکیک نیویورک</span></div><span class="price">۱۲۵٬۰۰۰ تومان</span></li>
+            <li><div><span>ردولوت</span></div><span class="price">۱۳۵٬۰۰۰ تومان</span></li>
+            <li><div><span>براونی با بستنی</span></div><span class="price">۱۴۵٬۰۰۰ تومان</span></li>
+        </ul></details>
+    </div>
+</div>
+
+<script>
+function openTab(evt, tabName) {
+    const contents = document.getElementsByClassName("tab-content");
+    for (let i = 0; i < contents.length; i++) {
+        contents[i].classList.remove("active");
+    }
+    const buttons = document.getElementsByClassName("tab-btn");
+    for (let i = 0; i < buttons.length; i++) {
+        buttons[i].classList.remove("active");
+    }
+    document.getElementById(tabName).classList.add("active");
+    evt.currentTarget.classList.add("active");
+}
+</script>
+
+</body>
+</html>
